@@ -100,7 +100,7 @@ def main_app():
                 newAudio = newAudio[int(t1)*1000:int(t2)*1000]
                 st.download_button(
                     label="Download chosen chunk of chosen song:",
-                    data=BufferedReader(),
+                    data=BufferedReader(newAudio.export(format="mp3")),
                     file_name='song_chunk.mp3',
                 )
             else:
