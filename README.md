@@ -3,5 +3,6 @@ Get the lyrics of your favorite band's song right now thanks to the text (GPT-3)
 
 You can type<br>
 > streamlit run app.py
+
 in your console, after cloning this repo,<br>
 or follow [this link](https://bartekkrzepkowski-song-transcriptor-app-app-n3z325.streamlitapp.com/) to view the application.
