@@ -12,6 +12,7 @@ entrypoints==0.4
 et-xmlfile==1.1.0
 ffmpeg-python==0.2.0
 ffprobe==0.5
+ffprobe-python==1.0.3
 filelock==3.8.0
 Flask==2.0.2
 future==0.18.2
