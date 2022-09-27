@@ -124,7 +124,7 @@ def main_app():
 
             audio = whisper.load_audio("song.mp3")
             audio = whisper.pad_or_trim(audio)
-            options = whisper.DecodingOptions()
+            options = whisper.DecodingOptions(fp16=False)
 
             import os
             os.remove('song.mp3')
