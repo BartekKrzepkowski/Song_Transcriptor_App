@@ -7,4 +7,4 @@ You can type `streamlit run app.py` in your console, after cloning this repo, or
 <video src=https://youtu.be/5XqY8TUcR0c width=180/>
 
 
-[![streamlit app](https://i.ytimg.com/vi/5XqY8TUcR0c/maxresdefault.jpg)](https://youtu.be/5XqY8TUcR0c "streamlit app")
+![streamlit app](https://i.ytimg.com/vi/5XqY8TUcR0c/maxresdefault.jpg)](https://youtu.be/5XqY8TUcR0c "streamlit app")
