@@ -1,14 +1,15 @@
 import streamlit as st
 
-from streamlit_compose import intro, func1, func2, func3, func4, func5, func6
+from streamlit_compose import intro, func1, func2, func3, func4, func5, func6, func7
 PAGES = {
     'Dashboard': intro,
-    'Find the song title': func1,
-    'Cut out': func2,
-    'Make a transcription': func3,
-    'Ask about few interesting facts': func4,
-    'Translate the lyrics': func5,
-    'Ask for a interpretation': func6,
+    'Find a song title': func1,
+    'Extract audio from youtube video': func2,
+    'Cut out audio': func3,
+    'Make a transcription': func4,
+    'Ask about few interesting facts': func5,
+    'Translate lyrics': func6,
+    'Ask for a interpretation': func7,
 }
 
 
