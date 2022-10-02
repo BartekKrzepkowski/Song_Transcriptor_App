@@ -56,8 +56,9 @@ def intro(api_key):
 
     st.write("---")
 
-    st.info("Unfortunately, because the cloud on which the application is deployed does not have a GPU,"
-             " transcription is possible only when the app is launched on a computer that has access to the GPU.")
+    st.info("Unfortunately, since the cloud on which the application is deployed does not have a GPU,"
+            " GPU transcription is only possible when the application is run on a computer that has access to the GPU."
+            " Only CPU transcription is possible on the cloud.")
 
 
 def func1(api_key):
