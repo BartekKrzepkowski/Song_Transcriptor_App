@@ -26,11 +26,12 @@ def intro(api_key):
     st.write('''
     In this app you can:
     1. Find a song title based on hints you enter.
-    2. Cut out a chunk of a chosen song whose text you want to get.
-    3. Make a transcription of a chosen song (audio -> text).
-    4. Ask about few interesting facts about chosen track.
-    5. Translate lyrics of a chosen song into a language of your choice.
-    6. Ask for a interpretation of the indicated song.
+    2. Download audio from a selected video on youtube.
+    3. Cut out a chunk of a chosen song whose text you want to get.
+    4. Make a transcription of a chosen song (audio -> text).
+    5. Ask about few interesting facts about chosen track.
+    6. Translate lyrics of a chosen song into a language of your choice.
+    7. Ask for a interpretation of the indicated song.
     ''')
 
 
