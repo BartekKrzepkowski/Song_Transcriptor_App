@@ -161,15 +161,15 @@ def func4(api_key):
                                " choose larger and larger models in case of failure.")
     if st.button('Transcribe'):
         newAudio = AudioSegment.from_mp3(audio_file)
-        newAudio.export("song.mp3", format="mp3")
+        newAudio.export("./song.mp3", format="mp3")
 
         with st.spinner(text='In progress'):
             st.write('Loading model and transcribing..')
-            os.system(f'whisper song.mp3 --model {model_size} --fp16 {device=="GPU"} > text.txt')
+            os.system(f'whisper ./song.mp3 --model {model_size} --fp16 {device=="GPU"} > ./text.txt')
             st.success('Done')
 
         # print the recognized text
-        with open('text.txt', 'r') as f:
+        with open('./text.txt', 'r') as f:
             text = f.read()
             text_download = '\n'.join(text.split('\n')[2:])
             text = '\n'.join(text.split('\n')[1:])
@@ -178,11 +178,11 @@ def func4(api_key):
         st.download_button(
             label="Download lyrics of the song",
             data=text_download,
-            file_name='lyrics.txt',
+            file_name='./lyrics.txt',
             mime="text/plain"
         )
-        os.remove('song.mp3')
-        os.remove('text.txt')
+        # os.remove('./song.mp3')
+        # os.remove('./text.txt')
         # os.remove('song.mp3.txt')
         # os.remove('song.mp3.vtt')
         st.write(text)
