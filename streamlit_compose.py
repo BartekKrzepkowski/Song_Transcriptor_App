@@ -3,7 +3,8 @@ from io import BufferedReader
 
 import streamlit as st
 from pydub import AudioSegment
-
+import youtube_dl
+from youtube_dl.utils import DownloadError
 from model_training_service import Code
 
 
@@ -105,21 +106,25 @@ ydl_opts = {
 
 def func2(api_key):
     st.subheader("2. Download audio from a selected video on youtube.")
-    url = st.text_input('Provide a URL link to a youtube video:', value='https://youtu.be/bzUPG8olnO0')
+    url = st.text_input('Provide a URL link to a youtube video:', value='https://youtu.be/oKU1HXMZYm4')
     if st.button('Extract audio'):
         st.video(url)
         st.info('It may take few seconds.')
-        with st.spinner(text='In progress'):
-            import youtube_dl
-            with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-                meta = ydl.extract_info(url)
-            newAudio = AudioSegment.from_mp3(f'{meta["id"]}.mp3')
-            st.download_button(
-                        label="Download extracted audio",
-                        data=BufferedReader(newAudio.export(format="mp3")),
-                        file_name=f'{meta["title"]}.mp3'
-            )
-        os.remove(f'{meta["id"]}.mp3')
+        try:
+            with st.spinner(text='In progress'):
+                with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                    meta = ydl.extract_info(url)
+                newAudio = AudioSegment.from_mp3(f'{meta["id"]}.mp3')
+                st.download_button(
+                            label="Download extracted audio",
+                            data=BufferedReader(newAudio.export(format="mp3")),
+                            file_name=f'{meta["title"]}.mp3'
+                )
+            os.remove(f'{meta["id"]}.mp3')
+        except youtube_dl.utils.DownloadError as e:
+            st.info('Some videos appear to be copyright protected against download. '
+                    'However, this problem does not occur when the application is run locally, not in the cloud.')
+            st.exception(e)
 
 
 def func3(api_key):
