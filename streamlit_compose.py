@@ -166,7 +166,6 @@ def func4(api_key):
         with st.spinner(text='In progress'):
             st.write('Loading model and transcribing..')
             os.system(f'whisper song.mp3 --model {model_size} --fp16 {device=="GPU"} > text.txt')
-            os.remove('song.mp3')
             st.success('Done')
 
         # print the recognized text
@@ -182,6 +181,7 @@ def func4(api_key):
             file_name='lyrics.txt',
             mime="text/plain"
         )
+        os.remove('song.mp3')
         os.remove('text.txt')
         # os.remove('song.mp3.txt')
         # os.remove('song.mp3.vtt')
