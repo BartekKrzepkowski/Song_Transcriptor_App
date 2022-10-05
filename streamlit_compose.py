@@ -165,7 +165,7 @@ def func4(api_key):
 
         with st.spinner(text='In progress'):
             st.write('Loading model and transcribing..')
-            os.system(f'whisper song.mp3 --model {model_size} --fp16 {device=="GPU"} --device {device} > text.txt')
+            os.system(f'whisper song.mp3 --model {model_size} --fp16 {device=="GPU"} > text.txt')
             os.remove('song.mp3')
             st.success('Done')
 
