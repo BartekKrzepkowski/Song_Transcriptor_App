@@ -67,7 +67,7 @@ tzlocal==4.2
 urllib3==1.26.7
 validators==0.20.0
 watchdog==2.1.9
-git+https://github.com/openai/whisper.git
 Werkzeug==2.0.2
 whisper==1.0
+youtube-dl==2021.12.17
 zipp==3.8.1
