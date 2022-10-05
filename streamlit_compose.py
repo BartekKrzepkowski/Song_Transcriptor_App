@@ -183,8 +183,8 @@ def func4(api_key):
             mime="text/plain"
         )
         os.remove('text.txt')
-        os.remove('song.mp3.txt')
-        os.remove('song.mp3.vtt')
+        # os.remove('song.mp3.txt')
+        # os.remove('song.mp3.vtt')
         st.write(text)
 
 
